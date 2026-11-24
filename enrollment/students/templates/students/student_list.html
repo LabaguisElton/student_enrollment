@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Students{% endblock %}
+
+{% block content %}
+	<h1>Students</h1>
+	{% if students %}
+		<ul>
+			{% for student in students %}
+				<li>
+					{{ student.first_name }} {{ student.last_name }} -
+					{{ student.email }} (Age {{ student.age }})
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No students found.</p>
+	{% endif %}
+{% endblock %}
